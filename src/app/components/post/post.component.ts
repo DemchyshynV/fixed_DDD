@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-@Input()
+  @Input()
   post: Post;
 
   constructor(private  router: Router, private activatedRoute: ActivatedRoute) {

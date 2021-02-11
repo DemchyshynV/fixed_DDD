@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Post} from '../../models/Post';
 import {Observable} from 'rxjs';
@@ -13,7 +13,7 @@ export class PostService {
 
   }
 
-  getPosts(): Observable<Post[]> {
-    return this.httpClient.get<Post[]>(this.url);
+  getPostsByUserId(userId: number): Observable<Post[]> {
+    return this.httpClient.get<Post[]>(`${this.url}?userId=${userId}`);
   }
 }
