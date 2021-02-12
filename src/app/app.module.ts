@@ -19,15 +19,8 @@ const routes: Routes = [
   {
     path: 'users', component: UsersComponent, resolve: {userData: UserResolveService}, children: [
       {
-        path: ':id', component: FullUserComponent, children: [
-          {
-            path: 'posts', component: PostsComponent, resolve: {postData: PostResolveService}, children: [
-              {path: ':id', component: FullPostComponent}
-            ]
-          },
-        ]
-      },
-      // {path: 'posts', component: PostsComponent, resolve: {postData: PostResolveService}},
+        path: ':id', component: FullUserComponent, resolve: {postData: PostResolveService},
+      }
     ]
   },
 ];

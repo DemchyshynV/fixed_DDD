@@ -12,10 +12,7 @@ export class FullPostComponent implements OnInit{
 @Input()
   post: Post;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe(value => {
-      this.post = this.router.getCurrentNavigation().extras.state as Post;
-    });
+  constructor() {
   }
 
   ngOnInit(): void {

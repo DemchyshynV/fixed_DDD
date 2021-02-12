@@ -12,8 +12,7 @@ export class PostResolveService implements Resolve<Post[]>{
   constructor(private postService: PostService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Post[]> | Promise<Post[]> | Post[] {
-    console.log(route.parent.params.id);
-    return this.postService.getPostsByUserId(route.parent.params.id)
+    return this.postService.getPostsByUserId(route.params.id)
   }
 
 
